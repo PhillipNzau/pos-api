@@ -12,7 +12,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       post '/register', to: 'users#register'
       post '/login', to: 'users#login'
-      resources :users, only: [:index, :show, :destroy, :update]
+      patch 'users/update', to: 'users#update'
+      resources :users, only: [:index, :show, :destroy]
       resources :products, only: [:create, :index, :show]
       resources :categories, only: [:create, :index, :show]
     end

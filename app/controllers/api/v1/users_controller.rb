@@ -1,7 +1,7 @@
 class Api::V1::UsersController < ApplicationController
-  before_action :set_user, only: %i[show update destroy]
-  before_action :authorized, except: %i[register login]
-  before_action :authorize_admin, only: %i[update destroy index]
+  before_action :set_user, only: %i[show destroy]
+  before_action :authorized, except: %i[register login update]
+  before_action :authorize_admin, only: %i[destroy index]
 
   def register
     user = User.create(user_params)
@@ -31,10 +31,13 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def update
-    if @user.update(user_params)
-      render json: @user
+    user_id = decoded_token[0]['user_id']
+    @user = User.find(user_id)
+ 
+    if current_user.update(user_params)
+      render json: current_user
     else
-      render json: @user.errors, status: :unprocessable_entity
+      render json: current_user.errors, status: :unprocessable_entity
     end
   end
 
