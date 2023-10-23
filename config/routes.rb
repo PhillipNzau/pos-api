@@ -14,7 +14,7 @@ Rails.application.routes.draw do
       post '/login', to: 'users#login'
       patch 'users/update', to: 'users#update'
       resources :users, only: [:index, :show, :destroy]
-      resources :products, only: [:create, :index, :show]
+      resources :products, only: [:create, :index, :show, :update, :destroy]
       resources :categories, only: [:create, :index, :show]
     end
   end

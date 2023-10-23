@@ -1,5 +1,7 @@
 class Api::V1::CategoriesController < ApplicationController
   before_action :set_category, only: %i[ show update destroy ]
+  before_action :authorized, except: %i[index show]
+  before_action :authorize_admin, only: %i[create destroy update]
 
   # GET /categories
   def index
@@ -15,12 +17,12 @@ class Api::V1::CategoriesController < ApplicationController
 
   # POST /categories
   def create
-    @category = Category.new(category_params)
+    category = Category.new(category_params)
 
-    if @category.save
-      render json: @category, status: :created, location: @category
+    if category.save
+      render json: category, status: :created
     else
-      render json: @category.errors, status: :unprocessable_entity
+      render json: { errors: category.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
