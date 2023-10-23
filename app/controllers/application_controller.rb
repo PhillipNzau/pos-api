@@ -1,8 +1,7 @@
 # app/controllers/application_controller.rb
-
 class ApplicationController < ActionController::API
     before_action :authorized
-    before_action :authorize_admin_or_charity
+    before_action :authorize_admin
     attr_reader :current_user
     ALGORITHM = 'HS256'.freeze
     if Rails.env.development?
@@ -55,10 +54,10 @@ class ApplicationController < ActionController::API
       { token: token, refresh_token: refresh_token }
     end
 
-    def authorize_admin_or_charity
-      return if current_user && (current_user["role"].downcase == "admin" || current_user["role"].downcase == "charity")
+    def authorize_admin
+      return if current_user && (current_user["role"].downcase == "admin")
   
-      render json: { error: 'User not charity or Admin Unauthorized' }, status: :unauthorized
+      render json: { error: 'User not Admin Unauthorized' }, status: :unauthorized
     end
 end
   
