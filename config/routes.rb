@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   namespace :api do
     namespace :v1 do
+      get 'orders/checkout'
       post '/register', to: 'users#register'
       post '/login', to: 'users#login'
       patch 'users/update', to: 'users#update'
@@ -21,6 +22,14 @@ Rails.application.routes.draw do
         end
       end
       resources :categories, only: [:create, :index, :show]
+      resources :orders, only: [:create] do
+        collection do
+          post 'checkout'
+          get 'checkout_history'
+        end
+      end
     end
+    
+
   end
 end
