@@ -1,6 +1,6 @@
 class Api::V1::ProductsController < ApplicationController
   before_action :set_product, only: %i[show update destroy]
-  before_action :authorized, except: %i[index show]
+  before_action :authorized, except: %i[index show filter_by_category filter_by_name]
   before_action :authorize_admin, only: %i[create destroy update]
 
   # GET /products
@@ -25,6 +25,32 @@ class Api::V1::ProductsController < ApplicationController
       render json: { product: product, inventory: product_inventory, categories: categories }, status: :created
     else
       render json: { errors: product.errors.full_messages }, status: :unprocessable_entity
+    end
+  end
+
+  # Define a new action to filter products by category
+  def filter_by_category
+    category_name = params[:category_name]
+    category = Category.where("lower(name) = ?", category_name.downcase).first
+    if category
+      products = category.products
+      render json: products, each_serializer: ProductSerializer
+    else
+      render json: { error: 'Category not found' }, status: :not_found
+    end
+  end
+
+  # Define a new action to filter products by name (partial search)
+  def filter_by_name
+    product_name = params[:product_name]
+    
+    # Perform a partial search for product names
+    products = Product.where("LOWER(name) LIKE ?", "%#{product_name.downcase}%")
+    
+    if products.present?
+      render json: products, each_serializer: ProductSerializer
+    else
+      render json: { error: 'No products found for the given search term' }, status: :not_found
     end
   end
 

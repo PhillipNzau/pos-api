@@ -3146,3 +3146,1327 @@ Completed 500 Internal Server Error in 128ms (ActiveRecord: 4.7ms | Allocations:
 ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed):
   
 app/controllers/api/v1/products_controller.rb:45:in `destroy'
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started DELETE "/api/v1/products/1" for ::1 at 2023-10-23 14:20:01 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::ProductsController#destroy as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/products_controller.rb:55:in `set_product'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 38ms (Views: 1.9ms | ActiveRecord: 0.7ms | Allocations: 23885)
+
+
+Started POST "/api/v1/login" for ::1 at 2023-10-23 14:20:14 +0300
+Processing by Api::V1::UsersController#login as */*
+  Parameters: {"email"=>"admin@admin.com", "password"=>"[FILTERED]", "user"=>{"email"=>"admin@admin.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:16:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 201 Created in 435ms (Views: 0.7ms | ActiveRecord: 1.1ms | Allocations: 36940)
+
+
+Started DELETE "/api/v1/products/1" for ::1 at 2023-10-23 14:20:32 +0300
+Processing by Api::V1::ProductsController#destroy as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/products_controller.rb:55:in `set_product'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:38:in `current_user'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/products_controller.rb:42:in `destroy'
+  [1m[36mProductCategory Load (0.3ms)[0m  [1m[34mSELECT "product_categories".* FROM "product_categories" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/controllers/api/v1/products_controller.rb:43:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/products_controller.rb:45:in `destroy'
+  [1m[36mProduct Destroy (0.8ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/api/v1/products_controller.rb:45:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/products_controller.rb:45:in `destroy'
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 2.4ms | Allocations: 13183)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed):
+  
+app/controllers/api/v1/products_controller.rb:45:in `destroy'
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Admin"], ["last_name", "User"], ["email", "admin@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-10-23 11:27:14.699834"], ["updated_at", "2023-10-23 11:27:14.699834"], ["role", "admin"]]
+  [1m[36mTRANSACTION (9.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user1@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "User"], ["last_name", "1"], ["email", "user1@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-10-23 11:27:14.968872"], ["updated_at", "2023-10-23 11:27:14.968872"], ["role", "user"]]
+  [1m[36mTRANSACTION (10.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user2@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "User"], ["last_name", "2"], ["email", "user2@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-10-23 11:27:15.225620"], ["updated_at", "2023-10-23 11:27:15.225620"], ["role", "user"]]
+  [1m[36mTRANSACTION (8.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user3@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "User"], ["last_name", "3"], ["email", "user3@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-10-23 11:27:15.487874"], ["updated_at", "2023-10-23 11:27:15.487874"], ["role", "user"]]
+  [1m[36mTRANSACTION (7.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Keyboards"], ["created_at", "2023-10-23 11:27:15.515741"], ["updated_at", "2023-10-23 11:27:15.515741"]]
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mice"], ["created_at", "2023-10-23 11:27:15.526256"], ["updated_at", "2023-10-23 11:27:15.526256"]]
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Monitors"], ["created_at", "2023-10-23 11:27:15.536360"], ["updated_at", "2023-10-23 11:27:15.536360"]]
+  [1m[36mTRANSACTION (7.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.7ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Cables"], ["created_at", "2023-10-23 11:27:15.549357"], ["updated_at", "2023-10-23 11:27:15.549357"]]
+  [1m[36mTRANSACTION (9.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.7ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Headsets"], ["created_at", "2023-10-23 11:27:15.567828"], ["updated_at", "2023-10-23 11:27:15.567828"]]
+  [1m[36mTRANSACTION (8.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user1@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user2@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user3@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Keyboards"], ["created_at", "2023-10-23 11:28:18.299306"], ["updated_at", "2023-10-23 11:28:18.299306"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "categories"[0m
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (11.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_categories_on_name" ON "categories" ("name")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "product_categories"[0m
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE TABLE "product_categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer NOT NULL, "category_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE INDEX "index_product_categories_on_category_id" ON "product_categories" ("category_id")[0m
+  [1m[35m (11.7ms)[0m  [1m[35mCREATE INDEX "index_product_categories_on_product_id" ON "product_categories" ("product_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "product_inventories"[0m
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE TABLE "product_inventories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer NOT NULL, "stock_quantity" integer, "restock_alert_threshold" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE INDEX "index_product_inventories_on_product_id" ON "product_inventories" ("product_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "products"[0m
+  [1m[35m (9.9ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "price" decimal, "barcode" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (10.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_products_on_barcode" ON "products" ("barcode")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (10.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "role" varchar)[0m
+  [1m[35m (10.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproduct_categories" ("id" integer NOT NULL PRIMARY KEY, "product_id" integer NOT NULL, "category_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE INDEX "tindex_aproduct_categories_on_product_id" ON "aproduct_categories" ("product_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE INDEX "tindex_aproduct_categories_on_category_id" ON "aproduct_categories" ("category_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aproduct_categories" ("id","product_id","category_id","created_at","updated_at")
+                     SELECT "id","product_id","category_id","created_at","updated_at" FROM "product_categories"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE "product_categories"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "product_categories" ("id" integer NOT NULL PRIMARY KEY, "product_id" integer NOT NULL, "category_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_005b71ca83"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_product_categories_on_category_id" ON "product_categories" ("category_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_product_categories_on_product_id" ON "product_categories" ("product_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "product_categories" ("id","product_id","category_id","created_at","updated_at")
+                     SELECT "id","product_id","category_id","created_at","updated_at" FROM "aproduct_categories"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aproduct_categories"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (8.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproduct_categories" ("id" integer NOT NULL PRIMARY KEY, "product_id" integer NOT NULL, "category_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_aproduct_categories_on_product_id" ON "aproduct_categories" ("product_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_aproduct_categories_on_category_id" ON "aproduct_categories" ("category_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aproduct_categories" ("id","product_id","category_id","created_at","updated_at")
+                     SELECT "id","product_id","category_id","created_at","updated_at" FROM "product_categories"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "product_categories"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "product_categories" ("id" integer NOT NULL PRIMARY KEY, "product_id" integer NOT NULL, "category_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_005b71ca83"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+, CONSTRAINT "fk_rails_98a9a32a41"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_product_categories_on_category_id" ON "product_categories" ("category_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_product_categories_on_product_id" ON "product_categories" ("product_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "product_categories" ("id","product_id","category_id","created_at","updated_at")
+                     SELECT "id","product_id","category_id","created_at","updated_at" FROM "aproduct_categories"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aproduct_categories"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproduct_inventories" ("id" integer NOT NULL PRIMARY KEY, "product_id" integer NOT NULL, "stock_quantity" integer DEFAULT NULL, "restock_alert_threshold" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "tindex_aproduct_inventories_on_product_id" ON "aproduct_inventories" ("product_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aproduct_inventories" ("id","product_id","stock_quantity","restock_alert_threshold","created_at","updated_at")
+                     SELECT "id","product_id","stock_quantity","restock_alert_threshold","created_at","updated_at" FROM "product_inventories"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "product_inventories"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "product_inventories" ("id" integer NOT NULL PRIMARY KEY, "product_id" integer NOT NULL, "stock_quantity" integer DEFAULT NULL, "restock_alert_threshold" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_889dd5a582"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_product_inventories_on_product_id" ON "product_inventories" ("product_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "product_inventories" ("id","product_id","stock_quantity","restock_alert_threshold","created_at","updated_at")
+                     SELECT "id","product_id","stock_quantity","restock_alert_threshold","created_at","updated_at" FROM "aproduct_inventories"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aproduct_inventories"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (9.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (7.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20231023075600)[0m
+  [1m[35m (8.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20231019094854),
+(20231019100809),
+(20231019100836),
+(20231019100849),
+(20231019100907);
+
+[0m
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-10-23 11:29:10.796152"], ["updated_at", "2023-10-23 11:29:10.796152"]]
+  [1m[36mTRANSACTION (7.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "3d8f9103c3abd29f17a8ce246fc26890274464f3"], ["created_at", "2023-10-23 11:29:10.823161"], ["updated_at", "2023-10-23 11:29:10.823161"]]
+  [1m[36mTRANSACTION (8.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "categories"[0m
+  [1m[35m (14.0ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (11.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_categories_on_name" ON "categories" ("name")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "product_categories"[0m
+  [1m[35m (10.8ms)[0m  [1m[35mCREATE TABLE "product_categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer NOT NULL, "category_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE INDEX "index_product_categories_on_category_id" ON "product_categories" ("category_id")[0m
+  [1m[35m (11.7ms)[0m  [1m[35mCREATE INDEX "index_product_categories_on_product_id" ON "product_categories" ("product_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "product_inventories"[0m
+  [1m[35m (10.8ms)[0m  [1m[35mCREATE TABLE "product_inventories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer NOT NULL, "stock_quantity" integer, "restock_alert_threshold" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (10.9ms)[0m  [1m[35mCREATE INDEX "index_product_inventories_on_product_id" ON "product_inventories" ("product_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "products"[0m
+  [1m[35m (10.1ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "price" decimal, "barcode" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (10.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_products_on_barcode" ON "products" ("barcode")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (10.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "role" varchar)[0m
+  [1m[35m (8.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproduct_categories" ("id" integer NOT NULL PRIMARY KEY, "product_id" integer NOT NULL, "category_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_aproduct_categories_on_product_id" ON "aproduct_categories" ("product_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_aproduct_categories_on_category_id" ON "aproduct_categories" ("category_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aproduct_categories" ("id","product_id","category_id","created_at","updated_at")
+                     SELECT "id","product_id","category_id","created_at","updated_at" FROM "product_categories"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "product_categories"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "product_categories" ("id" integer NOT NULL PRIMARY KEY, "product_id" integer NOT NULL, "category_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_005b71ca83"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_product_categories_on_category_id" ON "product_categories" ("category_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_product_categories_on_product_id" ON "product_categories" ("product_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "product_categories" ("id","product_id","category_id","created_at","updated_at")
+                     SELECT "id","product_id","category_id","created_at","updated_at" FROM "aproduct_categories"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aproduct_categories"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (6.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproduct_categories" ("id" integer NOT NULL PRIMARY KEY, "product_id" integer NOT NULL, "category_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "tindex_aproduct_categories_on_product_id" ON "aproduct_categories" ("product_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "tindex_aproduct_categories_on_category_id" ON "aproduct_categories" ("category_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aproduct_categories" ("id","product_id","category_id","created_at","updated_at")
+                     SELECT "id","product_id","category_id","created_at","updated_at" FROM "product_categories"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE "product_categories"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "product_categories" ("id" integer NOT NULL PRIMARY KEY, "product_id" integer NOT NULL, "category_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_005b71ca83"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+, CONSTRAINT "fk_rails_98a9a32a41"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_product_categories_on_category_id" ON "product_categories" ("category_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_product_categories_on_product_id" ON "product_categories" ("product_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "product_categories" ("id","product_id","category_id","created_at","updated_at")
+                     SELECT "id","product_id","category_id","created_at","updated_at" FROM "aproduct_categories"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "aproduct_categories"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (7.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproduct_inventories" ("id" integer NOT NULL PRIMARY KEY, "product_id" integer NOT NULL, "stock_quantity" integer DEFAULT NULL, "restock_alert_threshold" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_aproduct_inventories_on_product_id" ON "aproduct_inventories" ("product_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aproduct_inventories" ("id","product_id","stock_quantity","restock_alert_threshold","created_at","updated_at")
+                     SELECT "id","product_id","stock_quantity","restock_alert_threshold","created_at","updated_at" FROM "product_inventories"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "product_inventories"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "product_inventories" ("id" integer NOT NULL PRIMARY KEY, "product_id" integer NOT NULL, "stock_quantity" integer DEFAULT NULL, "restock_alert_threshold" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_889dd5a582"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_product_inventories_on_product_id" ON "product_inventories" ("product_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "product_inventories" ("id","product_id","stock_quantity","restock_alert_threshold","created_at","updated_at")
+                     SELECT "id","product_id","stock_quantity","restock_alert_threshold","created_at","updated_at" FROM "aproduct_inventories"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "aproduct_inventories"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (12.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (26.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (7.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20231023075600)[0m
+  [1m[35m (7.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20231019094854),
+(20231019100809),
+(20231019100836),
+(20231019100849),
+(20231019100907);
+
+[0m
+  [1m[35m (10.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-10-23 11:29:11.174606"], ["updated_at", "2023-10-23 11:29:11.174606"]]
+  [1m[36mTRANSACTION (7.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2023-10-23 11:29:11.195907"], ["key", "environment"]]
+  [1m[36mTRANSACTION (7.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "3d8f9103c3abd29f17a8ce246fc26890274464f3"], ["created_at", "2023-10-23 11:29:11.215356"], ["updated_at", "2023-10-23 11:29:11.215356"]]
+  [1m[36mTRANSACTION (7.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Admin"], ["last_name", "User"], ["email", "admin@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-10-23 11:29:11.556448"], ["updated_at", "2023-10-23 11:29:11.556448"], ["role", "admin"]]
+  [1m[36mTRANSACTION (7.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user1@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "User"], ["last_name", "1"], ["email", "user1@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-10-23 11:29:11.904694"], ["updated_at", "2023-10-23 11:29:11.904694"], ["role", "user"]]
+  [1m[36mTRANSACTION (7.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user2@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "User"], ["last_name", "2"], ["email", "user2@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-10-23 11:29:12.260528"], ["updated_at", "2023-10-23 11:29:12.260528"], ["role", "user"]]
+  [1m[36mTRANSACTION (7.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user3@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "User"], ["last_name", "3"], ["email", "user3@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-10-23 11:29:12.561145"], ["updated_at", "2023-10-23 11:29:12.561145"], ["role", "user"]]
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Keyboards"], ["created_at", "2023-10-23 11:29:12.583434"], ["updated_at", "2023-10-23 11:29:12.583434"]]
+  [1m[36mTRANSACTION (7.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mice"], ["created_at", "2023-10-23 11:29:12.595808"], ["updated_at", "2023-10-23 11:29:12.595808"]]
+  [1m[36mTRANSACTION (8.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Monitors"], ["created_at", "2023-10-23 11:29:12.612142"], ["updated_at", "2023-10-23 11:29:12.612142"]]
+  [1m[36mTRANSACTION (7.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Cables"], ["created_at", "2023-10-23 11:29:12.626883"], ["updated_at", "2023-10-23 11:29:12.626883"]]
+  [1m[36mTRANSACTION (11.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Headsets"], ["created_at", "2023-10-23 11:29:12.647983"], ["updated_at", "2023-10-23 11:29:12.647983"]]
+  [1m[36mTRANSACTION (8.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "barcode", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Synergistic Wool Watch"], ["description", "Numquam accusamus consequatur. Aut qui fuga. Quia molestiae delectus."], ["price", 491.72], ["barcode", "88863863"], ["created_at", "2023-10-23 11:29:13.832920"], ["updated_at", "2023-10-23 11:29:13.832920"]]
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 1], ["category_id", 4], ["created_at", "2023-10-23 11:29:13.881039"], ["updated_at", "2023-10-23 11:29:13.881039"]]
+  [1m[36mTRANSACTION (7.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductInventory Create (0.3ms)[0m  [1m[32mINSERT INTO "product_inventories" ("product_id", "stock_quantity", "restock_alert_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["product_id", 1], ["stock_quantity", 100], ["restock_alert_threshold", 20], ["created_at", "2023-10-23 11:29:13.905447"], ["updated_at", "2023-10-23 11:29:13.905447"]]
+  [1m[36mTRANSACTION (10.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.7ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "barcode", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Ergonomic Wool Bag"], ["description", "Illum molestiae molestiae. Consequuntur eos atque. Fuga quis atque."], ["price", 152.12], ["barcode", "32090536"], ["created_at", "2023-10-23 11:29:13.924530"], ["updated_at", "2023-10-23 11:29:13.924530"]]
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductCategory Create (0.8ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 2], ["category_id", 3], ["created_at", "2023-10-23 11:29:13.946243"], ["updated_at", "2023-10-23 11:29:13.946243"]]
+  [1m[36mTRANSACTION (8.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductInventory Create (0.4ms)[0m  [1m[32mINSERT INTO "product_inventories" ("product_id", "stock_quantity", "restock_alert_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["product_id", 2], ["stock_quantity", 100], ["restock_alert_threshold", 20], ["created_at", "2023-10-23 11:29:13.964222"], ["updated_at", "2023-10-23 11:29:13.964222"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "barcode", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Practical Granite Knife"], ["description", "Dolor nemo et. Sit error odit. Magnam qui voluptates."], ["price", 183.91], ["barcode", "18511222"], ["created_at", "2023-10-23 11:29:13.978039"], ["updated_at", "2023-10-23 11:29:13.978039"]]
+  [1m[36mTRANSACTION (8.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 3], ["category_id", 1], ["created_at", "2023-10-23 11:29:13.991917"], ["updated_at", "2023-10-23 11:29:13.991917"]]
+  [1m[36mTRANSACTION (7.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductInventory Create (0.7ms)[0m  [1m[32mINSERT INTO "product_inventories" ("product_id", "stock_quantity", "restock_alert_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["product_id", 3], ["stock_quantity", 100], ["restock_alert_threshold", 20], ["created_at", "2023-10-23 11:29:14.006369"], ["updated_at", "2023-10-23 11:29:14.006369"]]
+  [1m[36mTRANSACTION (7.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "barcode", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Heavy Duty Paper Bench"], ["description", "Esse est animi. Repellat harum officiis. Natus hic velit."], ["price", 411.66], ["barcode", "14628948"], ["created_at", "2023-10-23 11:29:14.023565"], ["updated_at", "2023-10-23 11:29:14.023565"]]
+  [1m[36mTRANSACTION (7.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 4], ["category_id", 5], ["created_at", "2023-10-23 11:29:14.039778"], ["updated_at", "2023-10-23 11:29:14.039778"]]
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductInventory Create (0.5ms)[0m  [1m[32mINSERT INTO "product_inventories" ("product_id", "stock_quantity", "restock_alert_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["product_id", 4], ["stock_quantity", 100], ["restock_alert_threshold", 20], ["created_at", "2023-10-23 11:29:14.054992"], ["updated_at", "2023-10-23 11:29:14.054992"]]
+  [1m[36mTRANSACTION (10.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.8ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "barcode", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Rustic Rubber Lamp"], ["description", "Facere voluptatem ab. A et enim. Maiores praesentium fugiat."], ["price", 405.5], ["barcode", "72891322"], ["created_at", "2023-10-23 11:29:14.075906"], ["updated_at", "2023-10-23 11:29:14.075906"]]
+  [1m[36mTRANSACTION (8.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductCategory Create (0.7ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 5], ["category_id", 3], ["created_at", "2023-10-23 11:29:14.098365"], ["updated_at", "2023-10-23 11:29:14.098365"]]
+  [1m[36mTRANSACTION (10.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductInventory Create (0.3ms)[0m  [1m[32mINSERT INTO "product_inventories" ("product_id", "stock_quantity", "restock_alert_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["product_id", 5], ["stock_quantity", 100], ["restock_alert_threshold", 20], ["created_at", "2023-10-23 11:29:14.122228"], ["updated_at", "2023-10-23 11:29:14.122228"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "barcode", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Aerodynamic Leather Plate"], ["description", "Officiis voluptas nihil. Modi ut facere. Et voluptatum ducimus."], ["price", 95.73], ["barcode", "61403031"], ["created_at", "2023-10-23 11:29:14.134275"], ["updated_at", "2023-10-23 11:29:14.134275"]]
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 6], ["category_id", 1], ["created_at", "2023-10-23 11:29:14.147875"], ["updated_at", "2023-10-23 11:29:14.147875"]]
+  [1m[36mTRANSACTION (7.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductInventory Create (0.3ms)[0m  [1m[32mINSERT INTO "product_inventories" ("product_id", "stock_quantity", "restock_alert_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["product_id", 6], ["stock_quantity", 100], ["restock_alert_threshold", 20], ["created_at", "2023-10-23 11:29:14.160240"], ["updated_at", "2023-10-23 11:29:14.160240"]]
+  [1m[36mTRANSACTION (10.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.7ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "barcode", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Enormous Granite Clock"], ["description", "Et vitae dignissimos. Et non recusandae. Officia blanditiis quia."], ["price", 16.36], ["barcode", "93494823"], ["created_at", "2023-10-23 11:29:14.181562"], ["updated_at", "2023-10-23 11:29:14.181562"]]
+  [1m[36mTRANSACTION (8.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductCategory Create (0.7ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 7], ["category_id", 2], ["created_at", "2023-10-23 11:29:14.202846"], ["updated_at", "2023-10-23 11:29:14.202846"]]
+  [1m[36mTRANSACTION (8.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductInventory Create (0.5ms)[0m  [1m[32mINSERT INTO "product_inventories" ("product_id", "stock_quantity", "restock_alert_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["product_id", 7], ["stock_quantity", 100], ["restock_alert_threshold", 20], ["created_at", "2023-10-23 11:29:14.221739"], ["updated_at", "2023-10-23 11:29:14.221739"]]
+  [1m[36mTRANSACTION (8.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "barcode", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Intelligent Iron Shirt"], ["description", "Similique facilis vel. Illum vero quia. Modi qui dolor."], ["price", 274.14], ["barcode", "51266837"], ["created_at", "2023-10-23 11:29:14.238411"], ["updated_at", "2023-10-23 11:29:14.238411"]]
+  [1m[36mTRANSACTION (8.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductCategory Create (0.8ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 8], ["category_id", 1], ["created_at", "2023-10-23 11:29:14.257719"], ["updated_at", "2023-10-23 11:29:14.257719"]]
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductInventory Create (0.4ms)[0m  [1m[32mINSERT INTO "product_inventories" ("product_id", "stock_quantity", "restock_alert_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["product_id", 8], ["stock_quantity", 100], ["restock_alert_threshold", 20], ["created_at", "2023-10-23 11:29:14.301149"], ["updated_at", "2023-10-23 11:29:14.301149"]]
+  [1m[36mTRANSACTION (8.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "barcode", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Synergistic Granite Lamp"], ["description", "Et dolorem cum. Rerum occaecati aliquid. Voluptas magnam doloribus."], ["price", 248.34], ["barcode", "95211589"], ["created_at", "2023-10-23 11:29:14.316356"], ["updated_at", "2023-10-23 11:29:14.316356"]]
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 9], ["category_id", 5], ["created_at", "2023-10-23 11:29:14.330074"], ["updated_at", "2023-10-23 11:29:14.330074"]]
+  [1m[36mTRANSACTION (9.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductInventory Create (0.2ms)[0m  [1m[32mINSERT INTO "product_inventories" ("product_id", "stock_quantity", "restock_alert_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["product_id", 9], ["stock_quantity", 100], ["restock_alert_threshold", 20], ["created_at", "2023-10-23 11:29:14.344030"], ["updated_at", "2023-10-23 11:29:14.344030"]]
+  [1m[36mTRANSACTION (7.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "barcode", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Durable Plastic Keyboard"], ["description", "Voluptas quod sit. Reprehenderit cumque ipsa. In reprehenderit ea."], ["price", 400.45], ["barcode", "54085886"], ["created_at", "2023-10-23 11:29:14.355845"], ["updated_at", "2023-10-23 11:29:14.355845"]]
+  [1m[36mTRANSACTION (8.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductCategory Create (0.7ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 10], ["category_id", 2], ["created_at", "2023-10-23 11:29:14.371991"], ["updated_at", "2023-10-23 11:29:14.371991"]]
+  [1m[36mTRANSACTION (8.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductInventory Create (0.9ms)[0m  [1m[32mINSERT INTO "product_inventories" ("product_id", "stock_quantity", "restock_alert_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["product_id", 10], ["stock_quantity", 100], ["restock_alert_threshold", 20], ["created_at", "2023-10-23 11:29:14.390730"], ["updated_at", "2023-10-23 11:29:14.390730"]]
+  [1m[36mTRANSACTION (7.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "barcode", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Rustic Leather Bench"], ["description", "Et vitae nemo. Illum odio libero. Cumque alias odio."], ["price", 149.62], ["barcode", "46107534"], ["created_at", "2023-10-23 11:29:14.412881"], ["updated_at", "2023-10-23 11:29:14.412881"]]
+  [1m[36mTRANSACTION (7.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 11], ["category_id", 1], ["created_at", "2023-10-23 11:29:14.426156"], ["updated_at", "2023-10-23 11:29:14.426156"]]
+  [1m[36mTRANSACTION (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductInventory Create (0.3ms)[0m  [1m[32mINSERT INTO "product_inventories" ("product_id", "stock_quantity", "restock_alert_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["product_id", 11], ["stock_quantity", 100], ["restock_alert_threshold", 20], ["created_at", "2023-10-23 11:29:14.437536"], ["updated_at", "2023-10-23 11:29:14.437536"]]
+  [1m[36mTRANSACTION (10.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "barcode", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Enormous Wooden Hat"], ["description", "Magni quia ad. Facilis recusandae ex. Aut ut dolores."], ["price", 176.4], ["barcode", "37604097"], ["created_at", "2023-10-23 11:29:14.452075"], ["updated_at", "2023-10-23 11:29:14.452075"]]
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductCategory Create (0.7ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 12], ["category_id", 2], ["created_at", "2023-10-23 11:29:14.467224"], ["updated_at", "2023-10-23 11:29:14.467224"]]
+  [1m[36mTRANSACTION (8.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductInventory Create (1.2ms)[0m  [1m[32mINSERT INTO "product_inventories" ("product_id", "stock_quantity", "restock_alert_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["product_id", 12], ["stock_quantity", 100], ["restock_alert_threshold", 20], ["created_at", "2023-10-23 11:29:14.486433"], ["updated_at", "2023-10-23 11:29:14.486433"]]
+  [1m[36mTRANSACTION (10.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "barcode", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Small Wooden Lamp"], ["description", "Libero aut veritatis. Veritatis repudiandae consequatur. In accusantium quia."], ["price", 281.84], ["barcode", "61309432"], ["created_at", "2023-10-23 11:29:14.509491"], ["updated_at", "2023-10-23 11:29:14.509491"]]
+  [1m[36mTRANSACTION (8.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 13], ["category_id", 1], ["created_at", "2023-10-23 11:29:14.526588"], ["updated_at", "2023-10-23 11:29:14.526588"]]
+  [1m[36mTRANSACTION (8.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductInventory Create (0.6ms)[0m  [1m[32mINSERT INTO "product_inventories" ("product_id", "stock_quantity", "restock_alert_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["product_id", 13], ["stock_quantity", 100], ["restock_alert_threshold", 20], ["created_at", "2023-10-23 11:29:14.542240"], ["updated_at", "2023-10-23 11:29:14.542240"]]
+  [1m[36mTRANSACTION (8.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.7ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "barcode", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Enormous Rubber Clock"], ["description", "Et minus quia. Laudantium et enim. Sit et beatae."], ["price", 249.06], ["barcode", "73683032"], ["created_at", "2023-10-23 11:29:14.561852"], ["updated_at", "2023-10-23 11:29:14.561852"]]
+  [1m[36mTRANSACTION (8.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 14], ["category_id", 4], ["created_at", "2023-10-23 11:29:14.582909"], ["updated_at", "2023-10-23 11:29:14.582909"]]
+  [1m[36mTRANSACTION (7.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductInventory Create (0.6ms)[0m  [1m[32mINSERT INTO "product_inventories" ("product_id", "stock_quantity", "restock_alert_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["product_id", 14], ["stock_quantity", 100], ["restock_alert_threshold", 20], ["created_at", "2023-10-23 11:29:14.599473"], ["updated_at", "2023-10-23 11:29:14.599473"]]
+  [1m[36mTRANSACTION (10.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.7ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "barcode", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Small Iron Watch"], ["description", "Et id delectus. Recusandae rerum voluptatem. Quia laudantium perspiciatis."], ["price", 86.47], ["barcode", "53568441"], ["created_at", "2023-10-23 11:29:14.621267"], ["updated_at", "2023-10-23 11:29:14.621267"]]
+  [1m[36mTRANSACTION (8.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 15], ["category_id", 1], ["created_at", "2023-10-23 11:29:14.643650"], ["updated_at", "2023-10-23 11:29:14.643650"]]
+  [1m[36mTRANSACTION (8.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductInventory Create (0.6ms)[0m  [1m[32mINSERT INTO "product_inventories" ("product_id", "stock_quantity", "restock_alert_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["product_id", 15], ["stock_quantity", 100], ["restock_alert_threshold", 20], ["created_at", "2023-10-23 11:29:14.661683"], ["updated_at", "2023-10-23 11:29:14.661683"]]
+  [1m[36mTRANSACTION (6.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "barcode", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Gorgeous Iron Coat"], ["description", "Voluptates sed quidem. Architecto numquam asperiores. Assumenda repudiandae quasi."], ["price", 360.0], ["barcode", "75785475"], ["created_at", "2023-10-23 11:29:14.677968"], ["updated_at", "2023-10-23 11:29:14.677968"]]
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 16], ["category_id", 2], ["created_at", "2023-10-23 11:29:14.692423"], ["updated_at", "2023-10-23 11:29:14.692423"]]
+  [1m[36mTRANSACTION (7.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductInventory Create (0.3ms)[0m  [1m[32mINSERT INTO "product_inventories" ("product_id", "stock_quantity", "restock_alert_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["product_id", 16], ["stock_quantity", 100], ["restock_alert_threshold", 20], ["created_at", "2023-10-23 11:29:14.705192"], ["updated_at", "2023-10-23 11:29:14.705192"]]
+  [1m[36mTRANSACTION (7.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "barcode", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Incredible Concrete Lamp"], ["description", "Est natus aliquam. Saepe aut exercitationem. Occaecati non dolorum."], ["price", 277.22], ["barcode", "82711993"], ["created_at", "2023-10-23 11:29:14.718654"], ["updated_at", "2023-10-23 11:29:14.718654"]]
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 17], ["category_id", 2], ["created_at", "2023-10-23 11:29:14.732921"], ["updated_at", "2023-10-23 11:29:14.732921"]]
+  [1m[36mTRANSACTION (7.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductInventory Create (0.3ms)[0m  [1m[32mINSERT INTO "product_inventories" ("product_id", "stock_quantity", "restock_alert_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["product_id", 17], ["stock_quantity", 100], ["restock_alert_threshold", 20], ["created_at", "2023-10-23 11:29:14.745796"], ["updated_at", "2023-10-23 11:29:14.745796"]]
+  [1m[36mTRANSACTION (8.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.7ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "barcode", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Ergonomic Iron Gloves"], ["description", "Sed soluta voluptate. Et expedita debitis. Maxime et placeat."], ["price", 74.75], ["barcode", "91958013"], ["created_at", "2023-10-23 11:29:14.761766"], ["updated_at", "2023-10-23 11:29:14.761766"]]
+  [1m[36mTRANSACTION (11.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductCategory Create (0.7ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 18], ["category_id", 5], ["created_at", "2023-10-23 11:29:14.786160"], ["updated_at", "2023-10-23 11:29:14.786160"]]
+  [1m[36mTRANSACTION (8.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductInventory Create (0.6ms)[0m  [1m[32mINSERT INTO "product_inventories" ("product_id", "stock_quantity", "restock_alert_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["product_id", 18], ["stock_quantity", 100], ["restock_alert_threshold", 20], ["created_at", "2023-10-23 11:29:14.804915"], ["updated_at", "2023-10-23 11:29:14.804915"]]
+  [1m[36mTRANSACTION (7.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "barcode", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Fantastic Steel Plate"], ["description", "Id reprehenderit exercitationem. Aspernatur modi sunt. Ullam autem nihil."], ["price", 480.41], ["barcode", "91148803"], ["created_at", "2023-10-23 11:29:14.822607"], ["updated_at", "2023-10-23 11:29:14.822607"]]
+  [1m[36mTRANSACTION (8.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 19], ["category_id", 2], ["created_at", "2023-10-23 11:29:14.839060"], ["updated_at", "2023-10-23 11:29:14.839060"]]
+  [1m[36mTRANSACTION (7.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductInventory Create (0.4ms)[0m  [1m[32mINSERT INTO "product_inventories" ("product_id", "stock_quantity", "restock_alert_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["product_id", 19], ["stock_quantity", 100], ["restock_alert_threshold", 20], ["created_at", "2023-10-23 11:29:14.853575"], ["updated_at", "2023-10-23 11:29:14.853575"]]
+  [1m[36mTRANSACTION (7.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "barcode", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Aerodynamic Granite Gloves"], ["description", "Asperiores tenetur tempora. Aut voluptatibus fugiat. Quod molestiae accusamus."], ["price", 157.9], ["barcode", "57274195"], ["created_at", "2023-10-23 11:29:14.868704"], ["updated_at", "2023-10-23 11:29:14.868704"]]
+  [1m[36mTRANSACTION (7.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 20], ["category_id", 5], ["created_at", "2023-10-23 11:29:14.884804"], ["updated_at", "2023-10-23 11:29:14.884804"]]
+  [1m[36mTRANSACTION (7.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductInventory Create (0.4ms)[0m  [1m[32mINSERT INTO "product_inventories" ("product_id", "stock_quantity", "restock_alert_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["product_id", 20], ["stock_quantity", 100], ["restock_alert_threshold", 20], ["created_at", "2023-10-23 11:29:14.899419"], ["updated_at", "2023-10-23 11:29:14.899419"]]
+  [1m[36mTRANSACTION (7.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user1@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user2@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user3@example.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Keyboards"], ["created_at", "2023-10-23 11:29:20.365050"], ["updated_at", "2023-10-23 11:29:20.365050"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20231019094854)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231019094854"]]
+  [1m[36mTRANSACTION (8.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateProducts (20231019100809)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "price" decimal, "barcode" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_products_on_barcode" ON "products" ("barcode")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231019100809"]]
+  [1m[36mTRANSACTION (9.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateProductInventories (20231019100836)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "product_inventories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer NOT NULL, "stock_quantity" integer, "restock_alert_threshold" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_889dd5a582"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE INDEX "index_product_inventories_on_product_id" ON "product_inventories" ("product_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231019100836"]]
+  [1m[36mTRANSACTION (11.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateCategories (20231019100849)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_categories_on_name" ON "categories" ("name")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231019100849"]]
+  [1m[36mTRANSACTION (9.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateProductCategories (20231019100907)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "product_categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer NOT NULL, "category_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_98a9a32a41"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+, CONSTRAINT "fk_rails_005b71ca83"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_product_categories_on_product_id" ON "product_categories" ("product_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_product_categories_on_category_id" ON "product_categories" ("category_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231019100907"]]
+  [1m[36mTRANSACTION (9.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddRoleToUsers (20231023075600)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "users" ADD "role" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20231023075600"]]
+  [1m[36mTRANSACTION (7.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-10-23 11:29:41.446152"], ["updated_at", "2023-10-23 11:29:41.446152"]]
+  [1m[36mTRANSACTION (6.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Admin"], ["last_name", "User"], ["email", "admin@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-10-23 11:29:48.543917"], ["updated_at", "2023-10-23 11:29:48.543917"], ["role", "admin"]]
+  [1m[36mTRANSACTION (7.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user1@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "User"], ["last_name", "1"], ["email", "user1@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-10-23 11:29:48.811548"], ["updated_at", "2023-10-23 11:29:48.811548"], ["role", "user"]]
+  [1m[36mTRANSACTION (7.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user2@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "User"], ["last_name", "2"], ["email", "user2@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-10-23 11:29:49.104039"], ["updated_at", "2023-10-23 11:29:49.104039"], ["role", "user"]]
+  [1m[36mTRANSACTION (8.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user3@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "User"], ["last_name", "3"], ["email", "user3@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-10-23 11:29:49.361494"], ["updated_at", "2023-10-23 11:29:49.361494"], ["role", "user"]]
+  [1m[36mTRANSACTION (7.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Keyboards"], ["created_at", "2023-10-23 11:29:49.384168"], ["updated_at", "2023-10-23 11:29:49.384168"]]
+  [1m[36mTRANSACTION (10.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mice"], ["created_at", "2023-10-23 11:29:49.398749"], ["updated_at", "2023-10-23 11:29:49.398749"]]
+  [1m[36mTRANSACTION (7.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Monitors"], ["created_at", "2023-10-23 11:29:49.414601"], ["updated_at", "2023-10-23 11:29:49.414601"]]
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.8ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Cables"], ["created_at", "2023-10-23 11:29:49.430781"], ["updated_at", "2023-10-23 11:29:49.430781"]]
+  [1m[36mTRANSACTION (9.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.8ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Headsets"], ["created_at", "2023-10-23 11:29:49.450228"], ["updated_at", "2023-10-23 11:29:49.450228"]]
+  [1m[36mTRANSACTION (7.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "barcode", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Gorgeous Aluminum Clock"], ["description", "Qui similique doloremque. Nobis aperiam voluptatem. Illo id hic."], ["price", 243.87], ["barcode", "88041179"], ["created_at", "2023-10-23 11:29:50.676498"], ["updated_at", "2023-10-23 11:29:50.676498"]]
+  [1m[36mTRANSACTION (7.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 1], ["category_id", 2], ["created_at", "2023-10-23 11:29:50.734905"], ["updated_at", "2023-10-23 11:29:50.734905"]]
+  [1m[36mTRANSACTION (7.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductInventory Create (0.5ms)[0m  [1m[32mINSERT INTO "product_inventories" ("product_id", "stock_quantity", "restock_alert_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["product_id", 1], ["stock_quantity", 100], ["restock_alert_threshold", 20], ["created_at", "2023-10-23 11:29:50.774012"], ["updated_at", "2023-10-23 11:29:50.774012"]]
+  [1m[36mTRANSACTION (6.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "barcode", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Synergistic Granite Wallet"], ["description", "Ipsum cumque dignissimos. Voluptas qui dolorum. Ut voluptas consequatur."], ["price", 122.99], ["barcode", "92236325"], ["created_at", "2023-10-23 11:29:50.787723"], ["updated_at", "2023-10-23 11:29:50.787723"]]
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductCategory Create (0.7ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 2], ["category_id", 4], ["created_at", "2023-10-23 11:29:50.803480"], ["updated_at", "2023-10-23 11:29:50.803480"]]
+  [1m[36mTRANSACTION (7.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductInventory Create (0.6ms)[0m  [1m[32mINSERT INTO "product_inventories" ("product_id", "stock_quantity", "restock_alert_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["product_id", 2], ["stock_quantity", 100], ["restock_alert_threshold", 20], ["created_at", "2023-10-23 11:29:50.820541"], ["updated_at", "2023-10-23 11:29:50.820541"]]
+  [1m[36mTRANSACTION (10.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.6ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "barcode", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Gorgeous Steel Hat"], ["description", "Earum facere esse. Possimus voluptatum hic. Amet qui facere."], ["price", 399.19], ["barcode", "21064364"], ["created_at", "2023-10-23 11:29:50.840992"], ["updated_at", "2023-10-23 11:29:50.840992"]]
+  [1m[36mTRANSACTION (7.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductCategory Create (0.7ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 3], ["category_id", 2], ["created_at", "2023-10-23 11:29:50.860221"], ["updated_at", "2023-10-23 11:29:50.860221"]]
+  [1m[36mTRANSACTION (8.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductInventory Create (0.5ms)[0m  [1m[32mINSERT INTO "product_inventories" ("product_id", "stock_quantity", "restock_alert_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["product_id", 3], ["stock_quantity", 100], ["restock_alert_threshold", 20], ["created_at", "2023-10-23 11:29:50.876581"], ["updated_at", "2023-10-23 11:29:50.876581"]]
+  [1m[36mTRANSACTION (9.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "barcode", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Small Paper Bag"], ["description", "Voluptatem quas tempore. Quo veniam fugit. Explicabo quos corporis."], ["price", 468.62], ["barcode", "71888668"], ["created_at", "2023-10-23 11:29:50.893678"], ["updated_at", "2023-10-23 11:29:50.893678"]]
+  [1m[36mTRANSACTION (7.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 4], ["category_id", 5], ["created_at", "2023-10-23 11:29:50.910576"], ["updated_at", "2023-10-23 11:29:50.910576"]]
+  [1m[36mTRANSACTION (7.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductInventory Create (0.4ms)[0m  [1m[32mINSERT INTO "product_inventories" ("product_id", "stock_quantity", "restock_alert_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["product_id", 4], ["stock_quantity", 100], ["restock_alert_threshold", 20], ["created_at", "2023-10-23 11:29:50.924775"], ["updated_at", "2023-10-23 11:29:50.924775"]]
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "barcode", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Durable Paper Bag"], ["description", "Repudiandae similique dolorem. Asperiores facere ut. Rem quia veritatis."], ["price", 226.32], ["barcode", "40259536"], ["created_at", "2023-10-23 11:29:50.938542"], ["updated_at", "2023-10-23 11:29:50.938542"]]
+  [1m[36mTRANSACTION (7.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductCategory Create (0.7ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 5], ["category_id", 3], ["created_at", "2023-10-23 11:29:50.955092"], ["updated_at", "2023-10-23 11:29:50.955092"]]
+  [1m[36mTRANSACTION (8.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductInventory Create (0.5ms)[0m  [1m[32mINSERT INTO "product_inventories" ("product_id", "stock_quantity", "restock_alert_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["product_id", 5], ["stock_quantity", 100], ["restock_alert_threshold", 20], ["created_at", "2023-10-23 11:29:50.972660"], ["updated_at", "2023-10-23 11:29:50.972660"]]
+  [1m[36mTRANSACTION (7.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "barcode", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Heavy Duty Paper Shoes"], ["description", "Eos tempore perferendis. Amet eligendi vitae. Sit repellat a."], ["price", 169.53], ["barcode", "19321387"], ["created_at", "2023-10-23 11:29:50.988116"], ["updated_at", "2023-10-23 11:29:50.988116"]]
+  [1m[36mTRANSACTION (8.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 6], ["category_id", 2], ["created_at", "2023-10-23 11:29:51.005070"], ["updated_at", "2023-10-23 11:29:51.005070"]]
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductInventory Create (0.4ms)[0m  [1m[32mINSERT INTO "product_inventories" ("product_id", "stock_quantity", "restock_alert_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["product_id", 6], ["stock_quantity", 100], ["restock_alert_threshold", 20], ["created_at", "2023-10-23 11:29:51.017609"], ["updated_at", "2023-10-23 11:29:51.017609"]]
+  [1m[36mTRANSACTION (7.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.9ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "barcode", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Durable Linen Bag"], ["description", "Et exercitationem aspernatur. Nisi quidem debitis. Voluptatem voluptas tempore."], ["price", 69.25], ["barcode", "48453189"], ["created_at", "2023-10-23 11:29:51.033823"], ["updated_at", "2023-10-23 11:29:51.033823"]]
+  [1m[36mTRANSACTION (10.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 7], ["category_id", 5], ["created_at", "2023-10-23 11:29:51.058832"], ["updated_at", "2023-10-23 11:29:51.058832"]]
+  [1m[36mTRANSACTION (7.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductInventory Create (0.4ms)[0m  [1m[32mINSERT INTO "product_inventories" ("product_id", "stock_quantity", "restock_alert_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["product_id", 7], ["stock_quantity", 100], ["restock_alert_threshold", 20], ["created_at", "2023-10-23 11:29:51.074183"], ["updated_at", "2023-10-23 11:29:51.074183"]]
+  [1m[36mTRANSACTION (7.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "barcode", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Awesome Rubber Hat"], ["description", "Optio dignissimos autem. Excepturi porro qui. Recusandae voluptate iusto."], ["price", 211.14], ["barcode", "92006355"], ["created_at", "2023-10-23 11:29:51.089260"], ["updated_at", "2023-10-23 11:29:51.089260"]]
+  [1m[36mTRANSACTION (7.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 8], ["category_id", 3], ["created_at", "2023-10-23 11:29:51.105416"], ["updated_at", "2023-10-23 11:29:51.105416"]]
+  [1m[36mTRANSACTION (7.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductInventory Create (0.5ms)[0m  [1m[32mINSERT INTO "product_inventories" ("product_id", "stock_quantity", "restock_alert_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["product_id", 8], ["stock_quantity", 100], ["restock_alert_threshold", 20], ["created_at", "2023-10-23 11:29:51.119849"], ["updated_at", "2023-10-23 11:29:51.119849"]]
+  [1m[36mTRANSACTION (7.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "barcode", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Practical Wool Table"], ["description", "Vel aut accusantium. Dolorem hic enim. Illum sit occaecati."], ["price", 160.5], ["barcode", "77399854"], ["created_at", "2023-10-23 11:29:51.135156"], ["updated_at", "2023-10-23 11:29:51.135156"]]
+  [1m[36mTRANSACTION (7.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductCategory Create (0.7ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 9], ["category_id", 5], ["created_at", "2023-10-23 11:29:51.151048"], ["updated_at", "2023-10-23 11:29:51.151048"]]
+  [1m[36mTRANSACTION (7.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductInventory Create (0.5ms)[0m  [1m[32mINSERT INTO "product_inventories" ("product_id", "stock_quantity", "restock_alert_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["product_id", 9], ["stock_quantity", 100], ["restock_alert_threshold", 20], ["created_at", "2023-10-23 11:29:51.168063"], ["updated_at", "2023-10-23 11:29:51.168063"]]
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "barcode", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Ergonomic Rubber Bag"], ["description", "Impedit ut voluptatibus. Labore nemo est. Maiores aperiam distinctio."], ["price", 145.95], ["barcode", "40274881"], ["created_at", "2023-10-23 11:29:51.183277"], ["updated_at", "2023-10-23 11:29:51.183277"]]
+  [1m[36mTRANSACTION (7.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductCategory Create (0.7ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 10], ["category_id", 2], ["created_at", "2023-10-23 11:29:51.200100"], ["updated_at", "2023-10-23 11:29:51.200100"]]
+  [1m[36mTRANSACTION (10.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductInventory Create (0.4ms)[0m  [1m[32mINSERT INTO "product_inventories" ("product_id", "stock_quantity", "restock_alert_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["product_id", 10], ["stock_quantity", 100], ["restock_alert_threshold", 20], ["created_at", "2023-10-23 11:29:51.219790"], ["updated_at", "2023-10-23 11:29:51.219790"]]
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "barcode", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Heavy Duty Cotton Shirt"], ["description", "Ad ea omnis. Adipisci veniam veritatis. Veritatis incidunt nulla."], ["price", 499.84], ["barcode", "11136965"], ["created_at", "2023-10-23 11:29:51.234617"], ["updated_at", "2023-10-23 11:29:51.234617"]]
+  [1m[36mTRANSACTION (7.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductCategory Create (0.7ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 11], ["category_id", 4], ["created_at", "2023-10-23 11:29:51.251124"], ["updated_at", "2023-10-23 11:29:51.251124"]]
+  [1m[36mTRANSACTION (7.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductInventory Create (0.3ms)[0m  [1m[32mINSERT INTO "product_inventories" ("product_id", "stock_quantity", "restock_alert_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["product_id", 11], ["stock_quantity", 100], ["restock_alert_threshold", 20], ["created_at", "2023-10-23 11:29:51.266006"], ["updated_at", "2023-10-23 11:29:51.266006"]]
+  [1m[36mTRANSACTION (6.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "barcode", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Small Silk Bag"], ["description", "Velit quae quia. Est tempore deleniti. Deserunt similique nulla."], ["price", 216.18], ["barcode", "21409585"], ["created_at", "2023-10-23 11:29:51.295918"], ["updated_at", "2023-10-23 11:29:51.295918"]]
+  [1m[36mTRANSACTION (7.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 12], ["category_id", 2], ["created_at", "2023-10-23 11:29:51.307808"], ["updated_at", "2023-10-23 11:29:51.307808"]]
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductInventory Create (0.2ms)[0m  [1m[32mINSERT INTO "product_inventories" ("product_id", "stock_quantity", "restock_alert_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["product_id", 12], ["stock_quantity", 100], ["restock_alert_threshold", 20], ["created_at", "2023-10-23 11:29:51.318283"], ["updated_at", "2023-10-23 11:29:51.318283"]]
+  [1m[36mTRANSACTION (10.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "barcode", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Sleek Wooden Clock"], ["description", "Voluptatem impedit beatae. Qui et ut. Nulla temporibus et."], ["price", 402.49], ["barcode", "68533014"], ["created_at", "2023-10-23 11:29:51.331885"], ["updated_at", "2023-10-23 11:29:51.331885"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 13], ["category_id", 4], ["created_at", "2023-10-23 11:29:51.343434"], ["updated_at", "2023-10-23 11:29:51.343434"]]
+  [1m[36mTRANSACTION (8.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductInventory Create (0.7ms)[0m  [1m[32mINSERT INTO "product_inventories" ("product_id", "stock_quantity", "restock_alert_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["product_id", 13], ["stock_quantity", 100], ["restock_alert_threshold", 20], ["created_at", "2023-10-23 11:29:51.356800"], ["updated_at", "2023-10-23 11:29:51.356800"]]
+  [1m[36mTRANSACTION (8.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.8ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "barcode", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Awesome Leather Computer"], ["description", "Dolor consequatur est. Nesciunt ab dolorem. Commodi atque doloremque."], ["price", 70.52], ["barcode", "92235854"], ["created_at", "2023-10-23 11:29:51.376613"], ["updated_at", "2023-10-23 11:29:51.376613"]]
+  [1m[36mTRANSACTION (8.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 14], ["category_id", 4], ["created_at", "2023-10-23 11:29:51.397874"], ["updated_at", "2023-10-23 11:29:51.397874"]]
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductInventory Create (0.4ms)[0m  [1m[32mINSERT INTO "product_inventories" ("product_id", "stock_quantity", "restock_alert_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["product_id", 14], ["stock_quantity", 100], ["restock_alert_threshold", 20], ["created_at", "2023-10-23 11:29:51.413972"], ["updated_at", "2023-10-23 11:29:51.413972"]]
+  [1m[36mTRANSACTION (7.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "barcode", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Practical Wool Computer"], ["description", "Soluta reiciendis itaque. Id cum odio. Quam provident consequatur."], ["price", 286.43], ["barcode", "88009711"], ["created_at", "2023-10-23 11:29:51.429501"], ["updated_at", "2023-10-23 11:29:51.429501"]]
+  [1m[36mTRANSACTION (7.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 15], ["category_id", 5], ["created_at", "2023-10-23 11:29:51.446238"], ["updated_at", "2023-10-23 11:29:51.446238"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductInventory Create (0.3ms)[0m  [1m[32mINSERT INTO "product_inventories" ("product_id", "stock_quantity", "restock_alert_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["product_id", 15], ["stock_quantity", 100], ["restock_alert_threshold", 20], ["created_at", "2023-10-23 11:29:51.459509"], ["updated_at", "2023-10-23 11:29:51.459509"]]
+  [1m[36mTRANSACTION (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "barcode", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Fantastic Aluminum Keyboard"], ["description", "At voluptatem nisi. Voluptas vero aut. Exercitationem voluptas commodi."], ["price", 210.64], ["barcode", "49849417"], ["created_at", "2023-10-23 11:29:51.471867"], ["updated_at", "2023-10-23 11:29:51.471867"]]
+  [1m[36mTRANSACTION (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 16], ["category_id", 3], ["created_at", "2023-10-23 11:29:51.484947"], ["updated_at", "2023-10-23 11:29:51.484947"]]
+  [1m[36mTRANSACTION (7.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductInventory Create (0.3ms)[0m  [1m[32mINSERT INTO "product_inventories" ("product_id", "stock_quantity", "restock_alert_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["product_id", 16], ["stock_quantity", 100], ["restock_alert_threshold", 20], ["created_at", "2023-10-23 11:29:51.497490"], ["updated_at", "2023-10-23 11:29:51.497490"]]
+  [1m[36mTRANSACTION (7.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.7ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "barcode", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Awesome Concrete Gloves"], ["description", "Maiores ut vel. Praesentium aut et. Commodi et corporis."], ["price", 42.48], ["barcode", "29722082"], ["created_at", "2023-10-23 11:29:51.512943"], ["updated_at", "2023-10-23 11:29:51.512943"]]
+  [1m[36mTRANSACTION (8.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductCategory Create (1.0ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 17], ["category_id", 4], ["created_at", "2023-10-23 11:29:51.533694"], ["updated_at", "2023-10-23 11:29:51.533694"]]
+  [1m[36mTRANSACTION (8.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductInventory Create (0.4ms)[0m  [1m[32mINSERT INTO "product_inventories" ("product_id", "stock_quantity", "restock_alert_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["product_id", 17], ["stock_quantity", 100], ["restock_alert_threshold", 20], ["created_at", "2023-10-23 11:29:51.551212"], ["updated_at", "2023-10-23 11:29:51.551212"]]
+  [1m[36mTRANSACTION (7.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.7ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "barcode", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Synergistic Copper Pants"], ["description", "Voluptatem quis accusantium. Et cupiditate nihil. Est aut ullam."], ["price", 81.58], ["barcode", "69049767"], ["created_at", "2023-10-23 11:29:51.568071"], ["updated_at", "2023-10-23 11:29:51.568071"]]
+  [1m[36mTRANSACTION (8.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductCategory Create (0.8ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 18], ["category_id", 2], ["created_at", "2023-10-23 11:29:51.588772"], ["updated_at", "2023-10-23 11:29:51.588772"]]
+  [1m[36mTRANSACTION (9.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductInventory Create (0.5ms)[0m  [1m[32mINSERT INTO "product_inventories" ("product_id", "stock_quantity", "restock_alert_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["product_id", 18], ["stock_quantity", 100], ["restock_alert_threshold", 20], ["created_at", "2023-10-23 11:29:51.606318"], ["updated_at", "2023-10-23 11:29:51.606318"]]
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "barcode", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Ergonomic Iron Shirt"], ["description", "Voluptatem nisi pariatur. Itaque sunt laudantium. Id quo maiores."], ["price", 91.56], ["barcode", "20585419"], ["created_at", "2023-10-23 11:29:51.621344"], ["updated_at", "2023-10-23 11:29:51.621344"]]
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 19], ["category_id", 1], ["created_at", "2023-10-23 11:29:51.636753"], ["updated_at", "2023-10-23 11:29:51.636753"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductInventory Create (0.4ms)[0m  [1m[32mINSERT INTO "product_inventories" ("product_id", "stock_quantity", "restock_alert_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["product_id", 19], ["stock_quantity", 100], ["restock_alert_threshold", 20], ["created_at", "2023-10-23 11:29:51.651208"], ["updated_at", "2023-10-23 11:29:51.651208"]]
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "barcode", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Rustic Copper Gloves"], ["description", "Laboriosam nemo cum. Voluptatem perspiciatis esse. Soluta quaerat et."], ["price", 340.51], ["barcode", "73325093"], ["created_at", "2023-10-23 11:29:51.663482"], ["updated_at", "2023-10-23 11:29:51.663482"]]
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 20], ["category_id", 5], ["created_at", "2023-10-23 11:29:51.676557"], ["updated_at", "2023-10-23 11:29:51.676557"]]
+  [1m[36mTRANSACTION (7.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProductInventory Create (0.2ms)[0m  [1m[32mINSERT INTO "product_inventories" ("product_id", "stock_quantity", "restock_alert_threshold", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["product_id", 20], ["stock_quantity", 100], ["restock_alert_threshold", 20], ["created_at", "2023-10-23 11:29:51.687349"], ["updated_at", "2023-10-23 11:29:51.687349"]]
+  [1m[36mTRANSACTION (6.9ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/api/v1/products" for ::1 at 2023-10-23 14:30:16 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::ProductsController#index as */*
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.66ms)
+Completed 200 OK in 104ms (Views: 43.7ms | ActiveRecord: 0.9ms | Allocations: 48422)
+
+
+Started GET "/api/v1/products/1" for ::1 at 2023-10-23 14:30:28 +0300
+Processing by Api::V1::ProductsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/products_controller.rb:55:in `set_product'
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (0.69ms)
+Completed 200 OK in 9ms (Views: 1.8ms | ActiveRecord: 0.3ms | Allocations: 1757)
+
+
+Started GET "/api/v1/products/1" for ::1 at 2023-10-23 14:32:13 +0300
+Processing by Api::V1::ProductsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/products_controller.rb:55:in `set_product'
+[active_model_serializers]   [1m[36mProductInventory Load (0.1ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:14:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:14:in `show'
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (133.22ms)
+Completed 200 OK in 164ms (Views: 147.8ms | ActiveRecord: 3.9ms | Allocations: 44183)
+
+
+Started GET "/api/v1/products/" for ::1 at 2023-10-23 14:32:28 +0300
+Processing by Api::V1::ProductsController#index as */*
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mProductInventory Load (0.1ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mProductInventory Load (0.2ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mProductInventory Load (0.2ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mProductInventory Load (0.1ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mProductInventory Load (0.1ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mProductInventory Load (0.2ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mProductInventory Load (0.1ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mProductInventory Load (0.1ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 8], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 8]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mProductInventory Load (0.2ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 9], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 9]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mProductInventory Load (0.1ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 10]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mProductInventory Load (0.1ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 11], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 11]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mProductInventory Load (0.1ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 12], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 12]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mProductInventory Load (0.2ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 13], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 13]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mProductInventory Load (0.1ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 14], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 14]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mProductInventory Load (0.1ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 15], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 15]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mProductInventory Load (0.1ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 16], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 16]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mProductInventory Load (0.1ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 17], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 17]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mProductInventory Load (0.1ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 18], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 18]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mProductInventory Load (0.1ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 19], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 19]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mProductInventory Load (0.1ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 20], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 20]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (131.09ms)
+Completed 200 OK in 135ms (Views: 128.7ms | ActiveRecord: 6.0ms | Allocations: 49604)
+
+
+Started GET "/api/v1/products/filter_by_category?category_id=1" for ::1 at 2023-10-23 14:38:45 +0300
+Processing by Api::V1::ProductsController#filter_by_category as */*
+  Parameters: {"category_id"=>"1"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/products_controller.rb:33:in `filter_by_category'
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" INNER JOIN "product_categories" ON "products"."id" = "product_categories"."product_id" WHERE "product_categories"."category_id" = ?[0m  [["category_id", 1]]
+  ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mProductInventory Load (0.2ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 19], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 19]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (18.7ms)
+Completed 200 OK in 50ms (Views: 26.2ms | ActiveRecord: 1.5ms | Allocations: 21406)
+
+
+Started GET "/api/v1/products/filter_by_category?category_id=2" for ::1 at 2023-10-23 14:38:53 +0300
+Processing by Api::V1::ProductsController#filter_by_category as */*
+  Parameters: {"category_id"=>"2"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/products_controller.rb:33:in `filter_by_category'
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" INNER JOIN "product_categories" ON "products"."id" = "product_categories"."product_id" WHERE "product_categories"."category_id" = ?[0m  [["category_id", 2]]
+  ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mProductInventory Load (0.1ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mProductInventory Load (0.1ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mProductInventory Load (0.2ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mProductInventory Load (0.1ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 10]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mProductInventory Load (0.2ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 12], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 12]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mProductInventory Load (0.1ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 18], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 18]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (45.66ms)
+Completed 200 OK in 51ms (Views: 47.2ms | ActiveRecord: 2.0ms | Allocations: 16005)
+
+
+Started GET "/api/v1/products/filter_by_category?category_category_name=Electronics" for ::1 at 2023-10-23 14:41:11 +0300
+Processing by Api::V1::ProductsController#filter_by_category as */*
+  Parameters: {"category_category_name"=>"Electronics"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/products_controller.rb:33:in `filter_by_category'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 404 Not Found in 13ms (Views: 2.3ms | ActiveRecord: 1.2ms | Allocations: 4463)
+
+
+Started GET "/api/v1/products/filter_by_category?category_category_name=mice" for ::1 at 2023-10-23 14:41:16 +0300
+Processing by Api::V1::ProductsController#filter_by_category as */*
+  Parameters: {"category_category_name"=>"mice"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/products_controller.rb:33:in `filter_by_category'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 404 Not Found in 2ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 741)
+
+
+Started GET "/api/v1/products/filter_by_category?category_category_name=Mice" for ::1 at 2023-10-23 14:41:18 +0300
+Processing by Api::V1::ProductsController#filter_by_category as */*
+  Parameters: {"category_category_name"=>"Mice"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/products_controller.rb:33:in `filter_by_category'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 404 Not Found in 3ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 727)
+
+
+Started GET "/api/v1/products/filter_by_category?category_name=Mice" for ::1 at 2023-10-23 14:41:33 +0300
+Processing by Api::V1::ProductsController#filter_by_category as */*
+  Parameters: {"category_name"=>"Mice"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Mice"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/products_controller.rb:33:in `filter_by_category'
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" INNER JOIN "product_categories" ON "products"."id" = "product_categories"."product_id" WHERE "product_categories"."category_id" = ?[0m  [["category_id", 2]]
+  ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mProductInventory Load (0.2ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mProductInventory Load (0.1ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mProductInventory Load (0.2ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mProductInventory Load (0.1ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 10]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mProductInventory Load (0.2ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 12], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 12]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mProductInventory Load (0.1ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 18], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 18]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (58.31ms)
+Completed 200 OK in 107ms (Views: 71.5ms | ActiveRecord: 5.6ms | Allocations: 31457)
+
+
+Started GET "/api/v1/products/filter_by_category?category_name=mice" for ::1 at 2023-10-23 14:41:39 +0300
+Processing by Api::V1::ProductsController#filter_by_category as */*
+  Parameters: {"category_name"=>"mice"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "mice"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/products_controller.rb:33:in `filter_by_category'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 404 Not Found in 3ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 602)
+
+
+Started GET "/api/v1/products/filter_by_category?category_name=mice" for ::1 at 2023-10-23 14:42:59 +0300
+Processing by Api::V1::ProductsController#filter_by_category as */*
+  Parameters: {"category_name"=>"mice"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (lower(name) = 'mice') ORDER BY "categories"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/products_controller.rb:34:in `filter_by_category'
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" INNER JOIN "product_categories" ON "products"."id" = "product_categories"."product_id" WHERE "product_categories"."category_id" = ?[0m  [["category_id", 2]]
+  ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mProductInventory Load (0.3ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mProductInventory Load (0.2ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mProductInventory Load (0.1ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mProductInventory Load (0.2ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 10]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mProductInventory Load (0.1ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 12], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 12]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mProductInventory Load (0.2ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 18], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 18]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (65.81ms)
+Completed 200 OK in 99ms (Views: 73.5ms | ActiveRecord: 5.9ms | Allocations: 35047)
+
+
+Started GET "/api/v1/products/filter_by_category?category_name=Mice" for ::1 at 2023-10-23 14:43:04 +0300
+Processing by Api::V1::ProductsController#filter_by_category as */*
+  Parameters: {"category_name"=>"Mice"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (lower(name) = 'mice') ORDER BY "categories"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/products_controller.rb:34:in `filter_by_category'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" INNER JOIN "product_categories" ON "products"."id" = "product_categories"."product_id" WHERE "product_categories"."category_id" = ?[0m  [["category_id", 2]]
+  ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mProductInventory Load (0.2ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mProductInventory Load (0.1ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mProductInventory Load (0.1ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mProductInventory Load (0.1ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 10]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mProductInventory Load (0.1ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 12], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 12]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mProductInventory Load (0.1ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 18], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 18]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (37.43ms)
+Completed 200 OK in 43ms (Views: 38.6ms | ActiveRecord: 1.8ms | Allocations: 16147)
+
+
+Started GET "/api/v1/products/filter_by_category?category_name=mice" for ::1 at 2023-10-23 14:43:16 +0300
+Processing by Api::V1::ProductsController#filter_by_category as */*
+  Parameters: {"category_name"=>"mice"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (lower(name) = 'mice') ORDER BY "categories"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/products_controller.rb:34:in `filter_by_category'
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" INNER JOIN "product_categories" ON "products"."id" = "product_categories"."product_id" WHERE "product_categories"."category_id" = ?[0m  [["category_id", 2]]
+  ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mProductInventory Load (0.2ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mProductInventory Load (0.1ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mProductInventory Load (0.1ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mProductInventory Load (0.1ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 10]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mProductInventory Load (0.2ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 12], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 12]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mProductInventory Load (0.2ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 18], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 18]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:37:in `filter_by_category'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (44.64ms)
+Completed 200 OK in 51ms (Views: 46.1ms | ActiveRecord: 2.2ms | Allocations: 16146)
+
+
+Started GET "/api/v1/categories" for ::1 at 2023-10-23 14:43:26 +0300
+Processing by Api::V1::CategoriesController#index as */*
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/categories_controller.rb:10:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.38ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.3ms | Allocations: 1508)
+
+
+Started GET "/api/v1/products/filter_by_name?product_name=sam" for ::1 at 2023-10-23 14:51:56 +0300
+Processing by Api::V1::ProductsController#filter_by_name as */*
+  Parameters: {"product_name"=>"sam"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (name ILIKE '%sam%')[0m
+  ↳ app/controllers/api/v1/products_controller.rb:50:in `filter_by_name'
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.6ms | Allocations: 4497)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near "ILIKE": syntax error):
+  
+app/controllers/api/v1/products_controller.rb:50:in `filter_by_name'
+Started GET "/api/v1/products/filter_by_name?product_name=sam" for ::1 at 2023-10-23 14:52:52 +0300
+Processing by Api::V1::ProductsController#filter_by_name as */*
+  Parameters: {"product_name"=>"sam"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (LOWER(name) LIKE '%sam%')[0m
+  ↳ app/controllers/api/v1/products_controller.rb:50:in `filter_by_name'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 404 Not Found in 10ms (Views: 1.1ms | ActiveRecord: 0.6ms | Allocations: 4757)
+
+
+Started GET "/api/v1/products/filter_by_name?product_name=k" for ::1 at 2023-10-23 14:52:59 +0300
+Processing by Api::V1::ProductsController#filter_by_name as */*
+  Parameters: {"product_name"=>"k"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (LOWER(name) LIKE '%k%')[0m
+  ↳ app/controllers/api/v1/products_controller.rb:50:in `filter_by_name'
+[active_model_serializers]   [1m[36mProductInventory Load (0.2ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:51:in `filter_by_name'
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:51:in `filter_by_name'
+[active_model_serializers]   [1m[36mProductInventory Load (0.2ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 12], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:51:in `filter_by_name'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 12]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:51:in `filter_by_name'
+[active_model_serializers]   [1m[36mProductInventory Load (0.1ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 13], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:51:in `filter_by_name'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 13]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:51:in `filter_by_name'
+[active_model_serializers]   [1m[36mProductInventory Load (0.2ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 16], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:51:in `filter_by_name'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 16]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:51:in `filter_by_name'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (63.8ms)
+Completed 200 OK in 72ms (Views: 61.2ms | ActiveRecord: 4.6ms | Allocations: 24690)
+
+
+Started GET "/api/v1/products/" for ::1 at 2023-10-23 14:53:47 +0300
+Processing by Api::V1::ProductsController#index as */*
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mProductInventory Load (0.1ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mProductInventory Load (0.1ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mProductInventory Load (0.1ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mProductInventory Load (0.2ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mProductInventory Load (0.2ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mProductInventory Load (0.2ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mProductInventory Load (0.2ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mProductInventory Load (0.2ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 8], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 8]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mProductInventory Load (0.2ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 9], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 9]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mProductInventory Load (0.2ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 10]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mProductInventory Load (0.2ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 11], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 11]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mProductInventory Load (0.2ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 12], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 12]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mProductInventory Load (0.2ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 13], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 13]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mProductInventory Load (0.2ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 14], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 14]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mProductInventory Load (0.1ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 15], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 15]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mProductInventory Load (0.1ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 16], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 16]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mProductInventory Load (0.2ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 17], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 17]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mProductInventory Load (0.2ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 18], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 18]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mProductInventory Load (0.1ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 19], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 19]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mProductInventory Load (0.1ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 20], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 20]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (164.01ms)
+Completed 200 OK in 167ms (Views: 160.5ms | ActiveRecord: 6.6ms | Allocations: 49629)
+
+
+Started GET "/api/v1/products/filter_by_name?product_name=pap" for ::1 at 2023-10-23 14:54:11 +0300
+Processing by Api::V1::ProductsController#filter_by_name as */*
+  Parameters: {"product_name"=>"pap"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (LOWER(name) LIKE '%pap%')[0m
+  ↳ app/controllers/api/v1/products_controller.rb:50:in `filter_by_name'
+[active_model_serializers]   [1m[36mProductInventory Load (0.2ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:51:in `filter_by_name'
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:51:in `filter_by_name'
+[active_model_serializers]   [1m[36mProductInventory Load (0.1ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:51:in `filter_by_name'
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:51:in `filter_by_name'
+[active_model_serializers]   [1m[36mProductInventory Load (0.2ms)[0m  [1m[34mSELECT "product_inventories".* FROM "product_inventories" WHERE "product_inventories"."product_id" = ? LIMIT ?[0m  [["product_id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:51:in `filter_by_name'
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/v1/products_controller.rb:51:in `filter_by_name'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (26.52ms)
+Completed 200 OK in 30ms (Views: 26.2ms | ActiveRecord: 1.5ms | Allocations: 7968)
+
+

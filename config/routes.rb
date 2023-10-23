@@ -14,7 +14,12 @@ Rails.application.routes.draw do
       post '/login', to: 'users#login'
       patch 'users/update', to: 'users#update'
       resources :users, only: [:index, :show, :destroy]
-      resources :products, only: [:create, :index, :show, :update, :destroy]
+      resources :products, only: [:create, :index, :show, :update, :destroy] do
+        collection do
+          get 'filter_by_category'
+          get 'filter_by_name'
+        end
+      end
       resources :categories, only: [:create, :index, :show]
     end
   end
